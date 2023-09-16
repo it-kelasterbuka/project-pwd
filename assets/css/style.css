@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+    overflow: hidden;
+} */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    color: #fff;
+    font-family: "Times New Roman", Times, serif;
+    /* Warna latar belakang dengan transparansi */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.container {
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 30px;
+    margin: 2px 0;
+}
+
+.navbar-menu {
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* Menyembunyikan menu di luar layar sebelum dibuka */
+    height: 100%;
+    background-color: #333;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    /* Tambahkan animasi dengan transisi left */
+}
+
+.navbar-menu.active {
+    left: 0;
+    /* Membuka menu dengan animasi */
+}
+
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-menu li {
+    padding: 10px 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Media query untuk perangkat mobile */
+@media screen and (max-width: 768px) {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2.5rem;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #333;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.3s ease;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        left: 0;
+    }
+
+    .navbar-menu ul {
+        text-align: center;
+    }
+
+    .navbar-menu li {
+        padding: 20px 0;
+    }
+
+}
+
+/* Media query untuk perangkat desktop */
+@media screen and (min-width: 769px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        left: auto;
+    }
+
+    .navbar-menu ul {
+        list-style: none;
+        display: flex;
+        margin-left: auto;
+        /* Menggerakkan menu ke sebelah kanan */
+    }
+
+    .navbar-menu li {
+        padding: 0 20px;
+    }
+
+    .navbar-menu a {
+        font-size: 1.2rem;
+    }
+
+    .navbar-close {
+        display: none;
+    }
+}
+
+/* Main Home */
+.row-home::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.col-home {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: center;
+}
+
+.col-home h2 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.col-home p {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.get-started-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #007bff;
+    /* Warna latar belakang */
+    color: #fff;
+    /* Warna teks */
+    border: none;
+    border-radius: 5px;
+    /* Sudut tombol melengkung */
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.get-started-button:hover {
+    background-color: #0056b3;
+    /* Warna latar belakang saat hover */
+}
+
+.col-home img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* Video */
+@media (max-width: 768px) {
+
+    /* Gaya CSS untuk mode desktop */
+    video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Gaya CSS untuk mode desktop */
+    video{
+        width: 600px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-home {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+}
