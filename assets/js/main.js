@@ -36,8 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.body.scrollHeight; // Atur tinggi canvas sesuai dengan tinggi konten
+  draw(); // Gambar ulang efek salju setelah mengubah ukuran canvas
+}
+
+window.addEventListener("resize", resizeCanvas);
+
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = document.body.scrollHeight; // Atur tinggi canvas sesuai dengan tinggi konten
 
 const snowflakes = [];
 
@@ -81,3 +89,5 @@ for (let i = 0; i < 100; i++) {
 }
 
 draw();
+
+// script-timeline
